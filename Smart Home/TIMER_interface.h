@@ -21,6 +21,8 @@ typedef enum
 
 void TIMER0_voidInit(void);
 
+void TIMER0_voidPWMDisable(void);
+
 
 uint8 TIMERS_u8SetCallBack( TIMERS_Int_Src_t Copy_u8TimerIntSource ,  void (* Copy_pvCallBackFunction )(void) );
 

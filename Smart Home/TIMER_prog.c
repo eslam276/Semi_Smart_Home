@@ -228,7 +228,12 @@ void TIMER0_voidInit(void)
 
 
 }
+void TIMER0_voidPWMDisable(void)
+{
 
+    CLR_BIT(TCCR0,TCCR0_COM00);
+    CLR_BIT(TCCR0,TCCR0_COM01);
+}
 
 
 void TIMER0_voidSetCompValue(uint8 Copy_u8Value)

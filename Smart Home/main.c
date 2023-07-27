@@ -177,7 +177,7 @@ void APP_voidControlFanSpeed(void)
 
 
 
-void APP_voidLogin(void);
+void APP_voidLogin(void)
 {
 
 	 CLCD_voidInit();

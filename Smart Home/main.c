@@ -15,6 +15,8 @@
 #include "CLCD_interface.h"
 #include "LDR.h"
 
+
+
 #include "APP.h"
 
 
@@ -38,18 +40,19 @@ void main (void)
     {
 
 		
-		Check = Number ;
 		
-    	
+    	/* Receive number from the mobile */
         Number = UART_voidReceiveData();
 
 
     	switch (Number)
     	{
 			case '1':
+                /* LED array port*/
 				DIO_u8SetPortValue(DIO_u8PORTC,0xff);
 				break;
 			case '2':
+                 /* LED array port*/
 				DIO_u8SetPortValue(DIO_u8PORTC,0u);
 					break;
 			case '3':
@@ -62,9 +65,11 @@ void main (void)
 		      	APP_voidCloseDoor();
 					break;
 			case '6':
+                /* DC motor control pin*/
 				DIO_u8SetPinValue(DIO_u8PORTB,DIO_u8PIN3,DIO_u8PIN_HIGH);
 			    	break;
 		    case '7':
+                /* DC motor control pin*/
 		    	DIO_u8SetPinValue(DIO_u8PORTB,DIO_u8PIN3,DIO_u8PIN_LOW);
 				     break;
 

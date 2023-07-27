@@ -21,7 +21,7 @@
 
 
 
-
+/* Function to convert analog volt from LDR to digital value using ADC*/
 
 void APP_voidControlLight(void)
 {
@@ -43,6 +43,7 @@ void APP_voidControlLight(void)
 void APP_voidOpenDoor(void)
 {
 
+    /* PWM mode in timer1 with top value = 40000 to control the duty cycle   */
 	TIMER1_voidInit();
 	TIMER1_voidSetCompValue(6000);
 
@@ -52,7 +53,7 @@ void APP_voidOpenDoor(void)
 
 void APP_voidCloseDoor(void)
 {
-
+    /* PWM mode in timer1 with top value = 40000 to control the duty cycle   */
 	TIMER1_voidInit();
 	TIMER1_voidSetCompValue(1000);
 
@@ -72,16 +73,18 @@ void APP_voidControlFanSpeed(void)
 
     uint8 check =100 ;
 
+    /* fast PWM mode */
 	TIMER0_voidInit();
 	
 	while(check > 10)
 	{
-
+        
+        /* Get the analog volt from the  Potentiometer and map it */
 		TIMER0_voidSetCompValue(Map(0,255,0,250,ADC_u8GetChannelReading(ADC_SINGLE_ENDED_CH0)));
 
         check = ADC_u8GetChannelReading(ADC_SINGLE_ENDED_CH0) ;
 	}
-    
+
     TIMER0_voidPWMDisable();
 }
 

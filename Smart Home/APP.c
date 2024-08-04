@@ -219,7 +219,7 @@ void APP_voidLogin(void)
 
         }
 
-        else if (ID==0 & Password ==1)
+        else if (ID==0 && Password ==1)
         {
 
             CLCD_voidSendCmd(1);
@@ -233,7 +233,7 @@ void APP_voidLogin(void)
         }
 
 
-        else if (ID==1 & Password ==0)
+        else if (ID==1 && Password ==0)
         {
 
             CLCD_voidSendCmd(1);
@@ -245,7 +245,7 @@ void APP_voidLogin(void)
             LoginI--;
 
         }
-        else if (ID==0 & Password ==0)
+        else if (ID==0 && Password ==0)
         {
 
             CLCD_voidSendCmd(1);
